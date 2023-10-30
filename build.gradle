@@ -34,6 +34,9 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-selenide:2.24.0'
 }
 
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+}
 
 test {
     useJUnitPlatform()
