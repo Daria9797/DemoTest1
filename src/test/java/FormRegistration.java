@@ -41,7 +41,9 @@ public class FormRegistration {
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-        Attach.browserConsoleLogs();
+        if (!Configuration.browser.equalsIgnoreCase("firefox")){
+            Attach.browserConsoleLogs();
+        }
         Attach.addVideo();
     }
     @Test
